@@ -1,4 +1,41 @@
-var TRAPS = [10, 14, 18, 21, 27, 7, 29]
+traps = [
+	{
+		trap: 7,
+		numPushBack: 4,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
+		trap: 10,
+		numPushBack: 6,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
+		trap: 14,
+		numPushBack: 8,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
+		trap: 18,
+		numPushBack: 3,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
+		trap: 21,
+		numPushBack: 15,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
+		trap: 27,
+		numPushBack: 9,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
+		trap: 29,
+		numPushBack: 2,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+];
+
 PLAYER = JSON.parse(window.localStorage.getItem('player'))
 PLAYER.turn = 0
 
@@ -58,11 +95,11 @@ function movePlayer(Pos, d1, x) {
     switch (x.id) {
         case "P-0":
             var left = getOffset(document.getElementById("tile_" + Pos)).left;
-            var top = getOffset(document.getElementById("tile_" + Pos)).top + 20;
+            var top = getOffset(document.getElementById("tile_" + Pos)).top + 15;
             break;
         case "P-1":
             var left = getOffset(document.getElementById("tile_" + Pos)).left + 20;
-            var top = getOffset(document.getElementById("tile_" + Pos)).top + 20;
+            var top = getOffset(document.getElementById("tile_" + Pos)).top + 15;
             break;
     }
 
@@ -94,20 +131,28 @@ function rollDice() {
     console.log(Pos);
 
     movePlayer(Pos, d1, x);
-    if (TRAPS.includes(Pos)) {
+    if (includesTrap(Pos)) {
+		let trapObj = traps.find(obj => obj.trap == Pos);
         console.log("trap " + Pos);
         document.getElementById("tile_" + Pos).style.backgroundColor = "#8A0000";
+		// This is where we grab the trap message
+		document.getElementById("infoMessage").innerHTML = trapObj.message.replace("{{num}}", trapObj.numPushBack);
         document.getElementById("infoMessage").style.display = "block";
 
-        //fade out red tile and popup after 2seconds
+        //fade out red tile and popup after 5 seconds
         setTimeout(function (val) {
             document.getElementById("tile_" + val).style.backgroundColor = "white";
             document.getElementById("infoMessage").style.display = "none";
-        }, 2000, Pos);
-        y = (TRAPS.indexOf(Pos) * 2 + 1) % 6;
+        }, 5000, Pos); // This is where you change the time the error remains, 1000 = 1 second
+        // y = (TRAPS.indexOf(Pos) * 2 + 1) % 6;
+		y = (indexOf(traps, "trap", Pos) * 2 + 1) % 6;
         d1 = y + 1;
        
-        Pos -= 7;
+		let num = trapObj.numPushBack;
+		// First must check if pushing the back the above amount sets them below 0 if so set to 1 else move back the correct amount
+        Pos = (Pos - num <= 0) ? 1 : Pos - num;
+
+		PLAYER[PLAYER.turn].position = Pos;
         setTimeout(function (Pos, x) {
             movePlayer(Pos, 0, x);
         }, 600, Pos, x);
@@ -123,6 +168,24 @@ function rollDice() {
 
     console.log("Player turn: " + PLAYER.turn);
     document.getElementById("status").textContent = "It is " + PLAYER[PLAYER.turn].name + "'s turn:";
+}
+
+function indexOf(array, attribute, value) {
+	for (var i = 0; i < array.length; i++) {
+		if (array[i][attribute] === value) {
+			return i
+		}
+	}
+	return -1;
+}
+
+function includesTrap(value) {
+	for (var i = 0; i < traps.length; i++) {
+		if (traps[i].trap === value) {
+			return true
+		}
+	}
+	return false
 }
 
 function gameRules() {

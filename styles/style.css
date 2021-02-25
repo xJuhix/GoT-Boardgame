@@ -1,45 +1,45 @@
 * {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
 }
 
 /*Global style*/
 
 @font-face {
-    font-family: "CinzelDecorative";
-    src: url('../fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf') format('truetype');
+	font-family: "CinzelDecorative";
+	src: url('../fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: "Fondamento";
-    src: url('../fonts/Fondamento/Fondamento-Regular.ttf') format('truetype');
-    font-style: normal;
+	font-family: "Fondamento";
+	src: url('../fonts/Fondamento/Fondamento-Regular.ttf') format('truetype');
+	font-style: normal;
 }
 
 @font-face {
-    font-family: "OpenSans";
-    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+	font-family: "OpenSans";
+	src: url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
 }
 
 
 
 html {
-    height: 100%;
-    padding: 0px;
+	height: 100%;
+	padding: 0px;
 }
 
 body {
-    padding-bottom: 0px;
-    overflow: visible;
-    overflow-x: hidden;
-    height: 100vh;
-    display: block;
-    margin: auto;
+	padding-bottom: 0px;
+	overflow: visible;
+	overflow-x: hidden;
+	height: 100vh;
+	display: block;
+	margin: auto;
 }
 
 main {
-    margin: 30px;
+   margin: 30px;
 }
 
 .homeImg{
@@ -64,123 +64,122 @@ main {
 }
 
 p {
-    color: white;
-    font-size: 20px;
-    font-weight: 400;
-    font-family: "OpenSans";
-    max-width: 900px;
+	color: white;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "OpenSans";
+	max-width: 900px;
 }
 
 h1 {
-    font-family: "CinzelDecorative";
-    color: white;
+	font-family: "CinzelDecorative";
+	color: white;
 }
 
 h2{
-    font-family: "Fondamento";
-    color: white;
-    margin-left: 50px;
+	font-family: "Fondamento";
+	color: white;
+	margin-left: 50px;
 } 
 
 h3 {
-    font-family: "Fondamento";
-    color: white;
+	font-family: "Fondamento";
+	color: white;
     
 }
 
 /*---------------------------------Header--------------------------------*/
 
 nav{
-    background-color: #141F26;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    background-color: #141F26;
-    height: 270px;
-    width: 100%;
-    margin-bottom: 25px;
+	background-color: #141F26;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	background-color: #141F26;
+	height: 270px;
+	width: 100%;
+	margin-bottom: 25px;
 
 }
 
 #logo img {
-    height: 250px;
+  height: 250px;
 }
 
 /*---------------------------------Index Page--------------------------------*/
 
 .indexContainer {
-    display: flex;
-    max-width: max-content;
-    flex-direction: column;
-    padding-top: 5%;
-    background: rgba(10, 12, 13, 0.692);
+	display: flex;
+	max-width: max-content;
+	flex-direction: column;
+	padding-top: 5%;
+	background: rgba(10, 12, 13, 0.692);
 }
 
 .welcome, .startInstructions {
-    align-self: center;
-    text-align: center;
+	align-self: center;
+	text-align: center;
 }
 
 .indexContainer a {
-    align-self: center;
-    margin-bottom: 20px;
+	align-self: center;
+	margin-bottom: 20px;
 }
 
 #cardcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 30px;
-    margin-right: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 .card-container {
-    cursor: pointer;
-    width: 200px;
-    height: auto;
-    margin: 25px;
-    border: white solid .25px;
-    padding: 15px;
-    border-radius: 6px;
+	cursor: pointer;
+	width: 200px;
+	height: auto;
+	margin: 25px;
+	border: white solid .25px;
+	padding: 15px;
+	border-radius: 6px;
 }
 
 .card-image {
-    object-fit: contain;
-    width: 100%;
-    height: 300px;
+	object-fit: contain;
+	width: 100%;
+	height: 300px;
 }
 
 #card-Id {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .playButton, #rules, .modal-newGame {
-    background-color: #6cafd9;
-    padding: 10px 15px 10px 15px;
-    width: 250px;
-    text-decoration: none;
-    font-size: 24px;
-    cursor: pointer;
-    font-family: "Fondamento";
-    border-radius: 12px;
-    color: white;
-    margin-left: 60px;
-    margin-bottom: 20px;
-    align-self:center;
+	background-color: #6cafd9;
+	padding: 10px 15px 10px 15px;
+	width: 250px;
+	text-decoration: none;
+	font-size: 24px;
+	cursor: pointer;
+	font-family: "Fondamento";
+	border-radius: 12px;
+	color: white;
+	align-self:center;
 }
 .modal-newGame {
-    margin-left:25%;
+	margin-left:25%;
+	margin-right:25%;
 }
 
 #rules{
-    margin-left: 10px;
+  margin-left: 10px;
 }
 .playButton:hover, #rules:hover, .modal-newGame:hover, #dice:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #FF8428;
-    box-shadow: 0 16px 16px 0 rgba(255, 255, 255, 0.322), 0 15px 30px 0 rgba(255, 255, 255, 0.329);
+	cursor: pointer;
+	color: white;
+	background-color: #FF8428;
+	box-shadow: 0 16px 16px 0 rgba(255, 255, 255, 0.322), 0 15px 30px 0 rgba(255, 255, 255, 0.329);
 }
 
 
@@ -258,11 +257,9 @@ nav{
 	position: fixed;
 }
 
-
 .playername{
 	font-size: 24px;
 }
-
 
 div.dice {
 	float: left;
@@ -297,27 +294,27 @@ div.dice {
 }
 
 .game-board-area {
-max-width: 100%;
-min-width: 100%;
+	max-width: 100%;
+	min-width: 100%;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+	margin-left: 3rem;
 }
 
 .brow-container {
-	/* margin: 0px 0px 0px 440px; */
 	width: 750px;
 	height: 450px;
 	position: relative;
-margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 .brow1 {
 	position: absolute;
 	top: 50px;
-	left: 0;
+	left: 4px;
 }
 
 .brow1>div {
@@ -332,7 +329,7 @@ margin-bottom: 40px;
 
 .brow2 {
 	position: absolute;
-	top: 50px; /* 55px */
+	top: 50px;
 	right: 0;
 }
 
@@ -349,7 +346,7 @@ margin-bottom: 40px;
 
 .brow3 {
 	position: absolute;
-	bottom: -4px; /* 0 */
+	bottom: -4px; 
 	right:0;
 }
 
@@ -366,8 +363,8 @@ margin-bottom: 40px;
 
 .brow4 {
 	position: absolute;
-	top:118px; /* 113 */
-	left: 0;
+	top:118px;
+	left: 4px;
 }
 
 .brow4>div {
@@ -385,104 +382,121 @@ margin-bottom: 40px;
 
 /*--------------------------------- Winner Page ----------------------------------*/
 .wrapper {
-min-height: 100vh;
+	min-height: 100vh;
 }
 
 .wrapper {
-display: flex;
-align-items: center;
-justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .modal {
-width: 100%;
-height: auto;
-max-width: 530px;
-margin: 20px;
-overflow: hidden;
-box-shadow: 0 60px 80px 0 rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: auto;
+	max-width: 530px;
+	margin: 20px;
+	overflow: hidden;
+	box-shadow: 0 60px 80px 0 rgba(0, 0, 0, 0.4);
 }
 
 .modal-top {
-padding: 30px 30px 20px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-background-color: rgba(20, 31, 38, 0.822);
+	padding: 30px 30px 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: rgba(20, 31, 38, 0.822);
 
 }
 
 .modal-icon {
-display: block;
-max-width: 207px;
-margin: 0 auto 65px;
+	display: block;
+	max-width: 207px;
+	margin: 0 auto 65px;
 }
 
 .modal-header {
-margin-bottom: 10px;
-font-size: 46px;
-text-align: center;
+	margin-bottom: 10px;
+	font-size: 46px;
+	text-align: center;
 }
 
 .modal-subheader {
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 }
 .modal-bottom {
-display: flex;
-border-bottom-left-radius: 10px;
-border-bottom-right-radius: 10px;
-background-color: rgba(20, 31, 38, 0.822);
+	display: flex;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: rgba(20, 31, 38, 0.822);
+}
 
+#restartGame {
+	background-color: #6cafd9;
+	padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	font-size: 24px;
+	cursor: pointer;
+	font-family: "Fondamento";
+	border-radius: 12px;
+	color: white;
+	align-self: center;
+}
+
+#restartGame:hover {
+	cursor: pointer;
+	color: white;
+	background-color: #FF8428;
+	box-shadow: 0 16px 16px 0 rgb(255 255 255 / 32%), 0 15px 30px 0 rgb(255 255 255 / 33%);
 }
 
 /*--------------------------------- Mobile --------------------------------*/
 @media screen and (max-width: 640px) {
 	body{
-			overflow-x: hidden;
+		overflow-x: hidden;
 	}
-
 
 	.modal-top {
-			padding: 69px 0 65px;
+		padding: 69px 0 65px;
 	}
 	.modal-bottom {
-			padding: 30px 60px;
+		padding: 30px 60px;
 	}
 
 	.modal-header{
-			font-size: 28px;
-			padding: 5px 10px 5px 10px;
+		font-size: 28px;
+		padding: 5px 10px 5px 10px;
 	}
 
 	.modal-subheader{
-			font-size: 24px;
-			padding: 5px 10px 5px 10px;
+		font-size: 24px;
+		padding: 5px 10px 5px 10px;
 	}
 
 	.playButton, /* #rules, */ .modal-newGame {
-			margin-left: 10px
+		margin-left: 10px
 	}
  
 	#cardcontainer {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			margin-left: 30px;
-			margin-right: 30px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-left: 30px;
+		margin-right: 30px;
 	}
 	.card-container{
-			width: 400px;
-			height: auto;
-			margin: 25px;
-			border: white solid;
-			padding: 15px;
-			border-radius: 6px;
+		width: 400px;
+		height: auto;
+		margin: 25px;
+		border: white solid;
+		padding: 15px;
+		border-radius: 6px;
 	}
 	.text-card{
-			display: none;
+		display: none;
 	}
 }
 
