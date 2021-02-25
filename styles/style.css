@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Global style*/
+
+@font-face {
+    font-family: "CinzelDecorative";
+    src: url('../fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Fondamento";
+    src: url('../fonts/Fondamento/Fondamento-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+
+
+
+html {
+    height: 100%;
+    padding: 0px;
+}
+
+body {
+    padding-bottom: 0px;
+    overflow: visible;
+    overflow-x: hidden;
+    height: 100vh;
+    display: block;
+    margin: auto;
+}
+
+main {
+    margin: 30px;
+}
+
+.homeImg{
+	background-image: url("../images/castle.jpg");
+}
+
+.gameImg{
+	background-image: url("../images/battle.jpg");
+}
+
+.winnerImg{
+	background-image: url("../images/map.jpg");
+}
+.backgroundImg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	margin-top: 0;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "OpenSans";
+    max-width: 900px;
+}
+
+h1 {
+    font-family: "CinzelDecorative";
+    color: white;
+}
+
+h2{
+    font-family: "Fondamento";
+    color: white;
+    margin-left: 50px;
+} 
+
+h3 {
+    font-family: "Fondamento";
+    color: white;
+    
+}
+
+/*---------------------------------Header--------------------------------*/
+
+nav{
+    background-color: #141F26;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #141F26;
+    height: 270px;
+    width: 100%;
+    margin-bottom: 25px;
+
+}
+
+#logo img {
+    height: 250px;
+}
+
+/*---------------------------------Index Page--------------------------------*/
+
+.indexContainer {
+    display: flex;
+    max-width: max-content;
+    flex-direction: column;
+    padding-top: 5%;
+    background: rgba(10, 12, 13, 0.692);
+}
+
+
+.welcome {
+    text-decoration: underline solid 3px #6CAFD9;
+}
+
+.welcome, .startInstructions {
+    align-self: center;
+    text-align: center;
+}
+
+
+.indexContainer a {
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+#cardcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.card-container {
+    cursor: pointer;
+    width: 200px;
+    height: auto;
+    margin: 25px;
+    border: white solid .25px;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.card-image {
+    object-fit: contain;
+    width: 100%;
+    height: 300px;
+}
+
+#card-Id {
+    visibility: hidden;
+}
+
+.playButton, #rules, .modal-newGame {
+    background-color: #6cafd9;
+    padding: 10px 15px 10px 15px;
+    width: 250px;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    font-family: "Fondamento";
+    border-radius: 12px;
+    color: white;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    align-self:center;
+}
+.modal-newGame {
+    margin-left:25%;
+}
+
+#rules{
+    margin-left: 10px;
+}
+.playButton:hover, #rules:hover, .modal-newGame:hover, #dice:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #FF8428;
+    box-shadow: 0 16px 16px 0 rgba(255, 255, 255, 0.322), 0 15px 30px 0 rgba(255, 255, 255, 0.329);
+}
+
+
+/*--------------------------------- Game Page ----------------------------------*/
+
+#dice {
+    background-color: #70A6CE;
+    padding: 5px 30px;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Fondamento";
+    border-radius: 12px;
+    color: white;
+    align-self: center;
+    top: 630px;
+    left: 120px;
+    position: fixed;
+}
+
+
+.playername{
+    font-size: 24px;
+}
+
+
+div.dice {
+    float: left;
+    width: 32px;
+    background: #F5F5F5;
+    border: #999 1px solid;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+}
+
+
+#status {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 330px;
+}
+
+#die {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 550px;
+    left: 145px;
+}
+
+.container-fluid {
+    max-width: 2048px;
+    min-width: 960px;
+    margin: 0px auto;
+    width: 100%;
+}
+
+.brow-container {
+    margin: 0px 0px 0px 440px;
+    width: 750px;
+    height: 450px;
+    position: relative;
+}
+
+.brow1 {
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+.brow1>div {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.739);
+    position:relative;
+}
+
+.brow2 {
+    position: absolute;
+    top: 55px;
+    right: 0;
+}
+
+.brow2>div {
+    margin-bottom: 4px;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.739);
+    position:relative;
+}
+
+.brow3 {
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+
+.brow3>div {
+    
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.739);
+    position:relative;
+}
+
+.brow4 {
+    position: absolute;
+    top:113px;
+    left: 0;
+}
+
+.brow4>div {
+    margin-bottom: 5px;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.739);
+    position:relative;
+}
+
+
+/*--------------------------------- Winner Page ----------------------------------*/
+.wrapper {
+min-height: 100vh;
+}
+
+.wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.modal {
+width: 100%;
+height: auto;
+max-width: 530px;
+margin: 20px;
+overflow: hidden;
+box-shadow: 0 60px 80px 0 rgba(0, 0, 0, 0.4);
+}
+
+.modal-top {
+padding: 30px 30px 20px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+background-color: rgba(20, 31, 38, 0.822);
+
+}
+
+.modal-icon {
+display: block;
+max-width: 207px;
+margin: 0 auto 65px;
+}
+
+.modal-header {
+margin-bottom: 10px;
+font-size: 46px;
+text-align: center;
+}
+
+.modal-subheader {
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.modal-bottom {
+display: flex;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+background-color: rgba(20, 31, 38, 0.822);
+
+}
+
+/*--------------------------------- Mobile --------------------------------*/
+@media screen and (max-width: 640px) {
+    body{
+        overflow-x: hidden;
+    }
+
+
+    .modal-top {
+        padding: 69px 0 65px;
+    }
+    .modal-bottom {
+        padding: 30px 60px;
+    }
+
+    .modal-header{
+        font-size: 28px;
+        padding: 5px 10px 5px 10px;
+    }
+
+    .modal-subheader{
+        font-size: 24px;
+        padding: 5px 10px 5px 10px;
+    }
+
+    .playButton, #rules, .modal-newGame {
+        margin-left: 10px
+    }
+   
+    #cardcontainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .card-container{
+        width: 400px;
+        height: auto;
+        margin: 25px;
+        border: white solid;
+        padding: 15px;
+        border-radius: 6px;
+    }
+    .text-card{
+        display: none;
+    }
+}
