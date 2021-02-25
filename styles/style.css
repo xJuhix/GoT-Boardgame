@@ -117,16 +117,10 @@ nav{
     background: rgba(10, 12, 13, 0.692);
 }
 
-
-.welcome {
-    text-decoration: underline solid 3px #6CAFD9;
-}
-
 .welcome, .startInstructions {
     align-self: center;
     text-align: center;
 }
-
 
 .indexContainer a {
     align-self: center;
@@ -191,132 +185,202 @@ nav{
 
 
 /*--------------------------------- Game Page ----------------------------------*/
+#P-0 {
+	transition: all 0.5s ease;
+	z-index: 1000;
+	position: absolute;
+	left: 475px;
+	top: 355px;
+}
+	
+#P-1 {
+	transition: all 0.5s ease;
+	z-index: 1000;
+	position: absolute;
+	left: 525px;
+	top: 355px;
+}
+	
+#die {
+	width:50px;
+	left:170px;
+}
+	
+#infoMessage {
+	position:absolute;
+	width:300px;
+	height:200px;
+	border:1px solid black;
+	background-color:#8A0000;
+	color:white;
+	display:none;
+	text-align: center;
+	top:450px;
+	left:700px;
+	z-index:10;
+}
+	
+#name-player1 {
+	position:fixed;
+	left:30px;
+	top:400px;
+}
+	
+#name-player2 {
+	position:fixed;
+	left:250px;
+	top:400px;
+}
+	
+#one {
+	position:fixed;
+	left:70px;
+	top:450px;
+}
+	
+#two {
+	position:fixed;
+	left:290px;
+	top:450px;
+}
 
 #dice {
-    background-color: #70A6CE;
-    padding: 5px 30px;
-    text-decoration: none;
-    font-size: 22px;
-    font-family: "Fondamento";
-    border-radius: 12px;
-    color: white;
-    align-self: center;
-    top: 630px;
-    left: 120px;
-    position: fixed;
+	background-color: #70A6CE;
+	padding: 5px 30px;
+	text-decoration: none;
+	font-size: 22px;
+	font-family: "Fondamento";
+	border-radius: 12px;
+	color: white;
+	align-self: center;
+	top: 630px;
+	left: 120px;
+	position: fixed;
 }
 
 
 .playername{
-    font-size: 24px;
+	font-size: 24px;
 }
 
 
 div.dice {
-    float: left;
-    width: 32px;
-    background: #F5F5F5;
-    border: #999 1px solid;
-    padding: 10px;
-    font-size: 24px;
-    text-align: center;
-    margin: 5px;
+	float: left;
+	width: 32px;
+	background: #F5F5F5;
+	border: #999 1px solid;
+	padding: 10px;
+	font-size: 24px;
+	text-align: center;
+	margin: 5px;
 }
 
 
 #status {
-    color: rgb(255, 255, 255);
-    position: fixed;
-    top: 330px;
+	color: rgb(255, 255, 255);
+	position: fixed;
+	top: 330px;
 }
 
 #die {
-    background-color: rgb(255, 255, 255);
-    position: fixed;
-    top: 550px;
-    left: 145px;
+	background-color: rgb(255, 255, 255);
+	position: fixed;
+	top: 550px;
+	left: 145px;
 }
 
 .container-fluid {
-    max-width: 2048px;
-    min-width: 960px;
-    margin: 0px auto;
-    width: 100%;
+	max-width: 2048px;
+	min-width: 960px;
+	margin: 0px auto;
+	width: 100%;
+}
+
+.game-board-area {
+max-width: 100%;
+min-width: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .brow-container {
-    margin: 0px 0px 0px 440px;
-    width: 750px;
-    height: 450px;
-    position: relative;
+	/* margin: 0px 0px 0px 440px; */
+	width: 750px;
+	height: 450px;
+	position: relative;
+margin-bottom: 40px;
 }
 
 .brow1 {
-    position: absolute;
-    top: 50px;
-    left: 0;
+	position: absolute;
+	top: 50px;
+	left: 0;
 }
 
 .brow1>div {
-    display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    justify-content: center;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.739);
-    position:relative;
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+	justify-content: center;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.739);
+	position:relative;
 }
 
 .brow2 {
-    position: absolute;
-    top: 55px;
-    right: 0;
+	position: absolute;
+	top: 50px; /* 55px */
+	right: 0;
 }
 
 .brow2>div {
-    margin-bottom: 4px;
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    justify-content: center;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.739);
-    position:relative;
+	margin-bottom: 4px;
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	justify-content: center;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.739);
+	position:relative;
 }
 
 .brow3 {
-    position: absolute;
-    bottom: 0;
-    right:0;
+	position: absolute;
+	bottom: -4px; /* 0 */
+	right:0;
 }
 
 .brow3>div {
-    
-    display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    justify-content: center;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.739);
-    position:relative;
+	
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+	justify-content: center;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.739);
+	position:relative;
 }
 
 .brow4 {
-    position: absolute;
-    top:113px;
-    left: 0;
+	position: absolute;
+	top:118px; /* 113 */
+	left: 0;
 }
 
 .brow4>div {
-    margin-bottom: 5px;
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    justify-content: center;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.739);
-    position:relative;
+	margin-bottom: 4px;
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	justify-content: center;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.739);
+	position:relative;
 }
+
 
 
 /*--------------------------------- Winner Page ----------------------------------*/
@@ -376,48 +440,49 @@ background-color: rgba(20, 31, 38, 0.822);
 
 /*--------------------------------- Mobile --------------------------------*/
 @media screen and (max-width: 640px) {
-    body{
-        overflow-x: hidden;
-    }
+	body{
+			overflow-x: hidden;
+	}
 
 
-    .modal-top {
-        padding: 69px 0 65px;
-    }
-    .modal-bottom {
-        padding: 30px 60px;
-    }
+	.modal-top {
+			padding: 69px 0 65px;
+	}
+	.modal-bottom {
+			padding: 30px 60px;
+	}
 
-    .modal-header{
-        font-size: 28px;
-        padding: 5px 10px 5px 10px;
-    }
+	.modal-header{
+			font-size: 28px;
+			padding: 5px 10px 5px 10px;
+	}
 
-    .modal-subheader{
-        font-size: 24px;
-        padding: 5px 10px 5px 10px;
-    }
+	.modal-subheader{
+			font-size: 24px;
+			padding: 5px 10px 5px 10px;
+	}
 
-    .playButton, #rules, .modal-newGame {
-        margin-left: 10px
-    }
-   
-    #cardcontainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-    .card-container{
-        width: 400px;
-        height: auto;
-        margin: 25px;
-        border: white solid;
-        padding: 15px;
-        border-radius: 6px;
-    }
-    .text-card{
-        display: none;
-    }
+	.playButton, /* #rules, */ .modal-newGame {
+			margin-left: 10px
+	}
+ 
+	#cardcontainer {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin-left: 30px;
+			margin-right: 30px;
+	}
+	.card-container{
+			width: 400px;
+			height: auto;
+			margin: 25px;
+			border: white solid;
+			padding: 15px;
+			border-radius: 6px;
+	}
+	.text-card{
+			display: none;
+	}
 }
+
