@@ -1,22 +1,27 @@
 traps = [
 	{
+		trap: 4,
+		numPushBack: 1,
+		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+	},
+	{
 		trap: 7,
-		numPushBack: 4,
+		numPushBack: 3,
 		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 10,
-		numPushBack: 6,
+		numPushBack: 5,
 		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 14,
-		numPushBack: 8,
+		numPushBack: 9,
 		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 18,
-		numPushBack: 3,
+		numPushBack: 4,
 		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
@@ -26,7 +31,7 @@ traps = [
 	},
 	{
 		trap: 27,
-		numPushBack: 9,
+		numPushBack: 8,
 		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
@@ -107,67 +112,57 @@ function movePlayer(Pos, d1, x) {
     x.style.top = top + "px";
 }
 function rollDice() {
-    var die1 = document.getElementById("die");
-    var d1 = Math.floor(Math.random() * 6) + 1;
-    let Pos = PLAYER[PLAYER.turn].position += d1;
 
-    die1.innerHTML = d1;
+	var die1 = document.getElementById("die");
+	var d1 = Math.floor(Math.random() * 6) + 1;
+	let Pos = PLAYER[PLAYER.turn].position += d1;
 
-    let x = document.getElementById("P-" + PLAYER.turn);
-    ///alert(PLAYER[1].position)
-    if (PLAYER.turn <= 0) {
+	die1.innerHTML = d1;
 
-        //alert('player 1')
-        document.getElementById("two").style.outline = " none";
-        document.getElementById("one").style.outline = " 6px solid #70A6CE";
-    }
-    else {
-        ///alert('player 2')
-        ////alert('player 1')
-        document.getElementById("one").style.outline = "none";
-        document.getElementById("two").style.outline = " 6px solid #FF8428";
-    }
+	let x = document.getElementById("P-" + PLAYER.turn);
+	if (PLAYER.turn <= 0) {
+		document.getElementById("two").style.outline = " none";
+		document.getElementById("one").style.outline = " 6px solid #70A6CE";
+	}
+	else {
+		document.getElementById("one").style.outline = "none";
+		document.getElementById("two").style.outline = " 6px solid #FF8428";
+	}
 
-    console.log(Pos);
+	console.log(Pos);
 
-    movePlayer(Pos, d1, x);
-    if (includesTrap(Pos)) {
-		let trapObj = traps.find(obj => obj.trap == Pos);
-        console.log("trap " + Pos);
-        document.getElementById("tile_" + Pos).style.backgroundColor = "#8A0000";
-		// This is where we grab the trap message
-		document.getElementById("infoMessage").innerHTML = trapObj.message.replace("{{num}}", trapObj.numPushBack);
-        document.getElementById("infoMessage").style.display = "block";
+	movePlayer(Pos, d1, x);
+	if (includesTrap(Pos)) {
+	let trapObj = traps.find(obj => obj.trap == Pos);
+		console.log("trap " + Pos);
+		document.getElementById("tile_" + Pos).style.backgroundColor = "#8A0000";
+	document.getElementById("infoMessage").innerHTML = trapObj.message.replace("{{num}}", trapObj.numPushBack);
+			document.getElementById("infoMessage").style.display = "block";
+			setTimeout(function (val) {
+				document.getElementById("tile_" + val).style.backgroundColor = "white";
+				document.getElementById("infoMessage").style.display = "none";
+			}, 5000, Pos); 
+			
+	y = (indexOf(traps, "trap", Pos) * 2 + 1) % 6;
+	d1 = y + 1;
+	let num = trapObj.numPushBack;
+		Pos = (Pos - num <= 0) ? 1 : Pos - num;
 
-        //fade out red tile and popup after 5 seconds
-        setTimeout(function (val) {
-            document.getElementById("tile_" + val).style.backgroundColor = "white";
-            document.getElementById("infoMessage").style.display = "none";
-        }, 5000, Pos); // This is where you change the time the error remains, 1000 = 1 second
-        // y = (TRAPS.indexOf(Pos) * 2 + 1) % 6;
-		y = (indexOf(traps, "trap", Pos) * 2 + 1) % 6;
-        d1 = y + 1;
-       
-		let num = trapObj.numPushBack;
-		// First must check if pushing the back the above amount sets them below 0 if so set to 1 else move back the correct amount
-        Pos = (Pos - num <= 0) ? 1 : Pos - num;
+	PLAYER[PLAYER.turn].position = Pos;
+		setTimeout(function (Pos, x) {
+			movePlayer(Pos, 0, x);
+		}, 600, Pos, x);
+	}
 
-		PLAYER[PLAYER.turn].position = Pos;
-        setTimeout(function (Pos, x) {
-            movePlayer(Pos, 0, x);
-        }, 600, Pos, x);
-    }
+	if (die1 === 6 || d1 === 6) {
+		PLAYER.turn;  
+	} else {
+		PLAYER.turn = (PLAYER.turn == 0 ? 1 : 0);
+	}
 
-    // fuction for giving player a second turn when dice roll == 6
+	console.log("Player turn: " + PLAYER.turn);
+	document.getElementById("status").textContent = "It is " + PLAYER[PLAYER.turn].name + "'s turn:";
 
-    if (die1 === 6 || d1 === 6) {
-        PLAYER.turn;  
-    } else {
-        PLAYER.turn = (PLAYER.turn == 0 ? 1 : 0);
-    }
-
-    console.log("Player turn: " + PLAYER.turn);
-    document.getElementById("status").textContent = "It is " + PLAYER[PLAYER.turn].name + "'s turn:";
 }
 
 function indexOf(array, attribute, value) {

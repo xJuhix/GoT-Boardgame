@@ -28,26 +28,22 @@
         <div class="container-fluid">
             <div class="row">
                 <h2 id="status"></h2>
-                <div id="infoMessage"
-                    style="position:absolute;width:300px;height:200px;border:1px solid black;background-color:#8A0000;color:white;display:none;text-align: center;top:450px;left:700px;z-index:10;">
-                    <h3>You were hit by an enemy</h3><h3>You are moved back 5 tiles!</h3>
-                </div>
-                <img id="P-0" style="transition: all 0.5s ease;z-index:1000;position: absolute;;left:500px;top:355px;" src="#"
+                <div id="infoMessage"></div>
+                <img id="P-0" src="#" alt="">
+                <img id="P-1" src="#"
                     height="50px" alt="">
-                <img id="P-1" style="transition: all 0.5s ease;z-index:1000;position: absolute;;left:450px;top:355px;" src="#"
-                    height="50px" alt="">
-                <div id="die" class="dice" style='width:50px;left:170px;'>0</div>
+                <div id="die" class="dice">0</div>
                 <button id="dice" class="btn border" onclick="rollDice()">Roll Dice</button>
                 
                 <div class="container-fluid">
                     <div class="boardcon">
                         <div class="players">
-                            <h3 class="pr-5 mr-5 playername" id="name-player1" style="position:fixed;left:30px;top:400px;">Name Player1</h3>
-                            <img class="getElementById" id='one' src="" height="100px" alt="selected player img" style="position:fixed;left:70px;top:450px;">
+                            <h3 class="pr-5 mr-5 playername" id="name-player1">Name Player1</h3>
+                            <img class="getElementById" id='one' src="" alt="selected player img">
                         </div>
                         <div class="players">
-                            <h3 class="pr-5 mr-5 playername" id="name-player2" style="position:fixed;left:250px;top:400px;">Name Player2</h3>
-                            <img class="image-player2" id='two' src="" height="100px" alt="selected player img" style="position:fixed;left:290px;top:450px;">
+                            <h3 class="pr-5 mr-5 playername" id="name-player2">Name Player2</h3>
+                            <img class="image-player2" id='two' src="" alt="selected player img">
                         </div>
 
                         <div class="container-fluid game-board-area">

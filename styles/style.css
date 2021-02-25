@@ -91,7 +91,6 @@ h3 {
 /*---------------------------------Header--------------------------------*/
 
 nav{
-	background-color: #141F26;
 	display: flex;
 	align-content: center;
 	align-items: center;
@@ -138,17 +137,17 @@ nav{
 .card-container {
 	cursor: pointer;
 	width: 200px;
-	height: auto;
-	margin: 25px;
+	height: 470px;
 	border: white solid .25px;
 	padding: 15px;
 	border-radius: 6px;
+	text-align: center;
 }
 
 .card-image {
 	object-fit: contain;
 	width: 100%;
-	height: 300px;
+	height: 250px;
 }
 
 #card-Id {
@@ -166,6 +165,8 @@ nav{
 	border-radius: 12px;
 	color: white;
 	align-self:center;
+	margin-top: 1.5rem;
+	margin-bottom: 2.5rem;
 }
 .modal-newGame {
 	margin-left:25%;
@@ -173,7 +174,8 @@ nav{
 }
 
 #rules{
-  margin-left: 10px;
+	margin-left: 10px;
+	
 }
 .playButton:hover, #rules:hover, .modal-newGame:hover, #dice:hover {
 	cursor: pointer;
@@ -188,23 +190,20 @@ nav{
 	transition: all 0.5s ease;
 	z-index: 1000;
 	position: absolute;
-	left: 475px;
+	left: 500px;
 	top: 355px;
+	height: 50px;
 }
 	
 #P-1 {
 	transition: all 0.5s ease;
 	z-index: 1000;
 	position: absolute;
-	left: 525px;
+	left: 450px;
 	top: 355px;
+	height: 50px;
 }
-	
-#die {
-	width:50px;
-	left:170px;
-}
-	
+		
 #infoMessage {
 	position:absolute;
 	width:300px;
@@ -215,8 +214,17 @@ nav{
 	display:none;
 	text-align: center;
 	top:450px;
-	left:700px;
+	left:50rem;
 	z-index:10;
+}
+
+#infoMessage h3{
+	margin-top: 1.5rem;
+}
+
+.playername{
+	font-size: 24px;
+	margin-left: 2.5rem;
 }
 	
 #name-player1 {
@@ -224,23 +232,24 @@ nav{
 	left:30px;
 	top:400px;
 }
+#one {
+	position:fixed;
+	left:70px;
+	top:450px;
+	height: 100px;
+}
 	
 #name-player2 {
 	position:fixed;
 	left:250px;
 	top:400px;
 }
-	
-#one {
-	position:fixed;
-	left:70px;
-	top:450px;
-}
-	
+		
 #two {
 	position:fixed;
 	left:290px;
 	top:450px;
+	height: 100px;
 }
 
 #dice {
@@ -253,13 +262,12 @@ nav{
 	color: white;
 	align-self: center;
 	top: 630px;
-	left: 120px;
+	left: 150px;
 	position: fixed;
+	margin-top: 2rem;
 }
 
-.playername{
-	font-size: 24px;
-}
+
 
 div.dice {
 	float: left;
@@ -283,7 +291,9 @@ div.dice {
 	background-color: rgb(255, 255, 255);
 	position: fixed;
 	top: 550px;
-	left: 145px;
+	width:50px;
+	left:198px;
+	
 }
 
 .container-fluid {

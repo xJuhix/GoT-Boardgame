@@ -213,36 +213,33 @@ var playerCards = [
 
 // Displays Cards
 function createCards(playerCards) {
-    var cardElement = document.getElementById('cardcontainer')
-
-    for (var i = 0; i < playerCards.length; i++) {
-        const card = playerCards[i]
-        let shrink = card.Id == 132 ? "img-fluid w-75 " : ''
-        cardElement.innerHTML +=
-            `<div id="${card.Id}" class="card-container col-sm-3 col-md-3 col-lg-2 m-2 mt-3" onclick="cardClicked">
-            <img class="${shrink}card-image" src=${card.src} alt=${card.alt} width="100%"></img>
-            <h3 class=Card-Name">${card.name}</h3>
-            <p class="text-card"> House of: ${card.house}</p>
-            <p class="text-card"> Titles: ${card.titles}</p>
-            <input class="checkbox" id="check-${card.Id}" type='checkbox' hidden name='char'/>
-            </div>`
-    }
+	var cardElement = document.getElementById('cardcontainer')
+	
+	for (var i = 0; i < playerCards.length; i++) {
+		const card = playerCards[i]
+		let shrink = card.Id == 132 ? "img-fluid w-75 " : ''
+		cardElement.innerHTML +=
+			`<div id="${card.Id}" class="card-container col-sm-3 col-md-3 col-lg-2 m-2 mt-3" onclick="cardClicked">
+			<img class="${shrink}card-image" src=${card.src} alt=${card.alt} width="100%"></img>
+			<h3 class=Card-Name">${card.name}</h3>
+			<p class="text-card"> House of: ${card.house}</p>
+			<p class="text-card"> Titles: ${card.titles}</p>
+			<input class="checkbox" id="check-${card.Id}" type='checkbox' hidden name='char'/>
+			</div>`
+	}
 }
 
 createCards(playerCards);
 
-
-
 var container = document.getElementsByClassName('card-container');
 for (const i of container) {
-    i.addEventListener("click", cardClicked);
+  i.addEventListener("click", cardClicked);
 }
 
 function cardClicked() {
     const colors = ["#70A6CE", "#FF8428"];
 
     let box = document.getElementById('check-' + this.id);
-    //alert(box)
     box.checked = !box.checked;
     let boxes = document.getElementsByClassName('checkbox');
     let checked = 0;
@@ -266,7 +263,6 @@ function cardClicked() {
 }
 
 var PLAYER = [];
-var TRAPS = [10, 14, 18, 21, 27, 7, 29]
 document.getElementById('startbtn').addEventListener('click', () => {
     PLAYER = [];
     let boxes = document.getElementsByClassName('checkbox');
