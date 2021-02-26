@@ -7,7 +7,7 @@ traps = [
 	{
 		trap: 7,
 		numPushBack: 3,
-		message: '<h3You were hit by an arrow.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>You were hit by an arrow.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 10,
