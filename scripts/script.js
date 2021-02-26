@@ -196,19 +196,18 @@ var playerCards = [
         Culture: "Dornish",
         titles: ["Princess of Dorne"],
         Aliases: []
-    },
-    {
-        Id: 132,
-        name: "Arlan of Pennytree",
-        src: 'images/Pennytree.png',
-        alt: '',
-        house: 'Pennytree',
-        IsFemale: false,
-        Culture: "",
-        titles: ["Ser"], Aliases: [], Born: "In or between 149 AC and 153 AC, at Pennytree", Died: "In 209 AC, at the Reach",
-    },
-
-
+		},
+		{
+			Id:332,
+			Name: "Duram Bar Emmon",
+			src: 'images/baremmon.png',
+			alt:'',
+			house: 'Bar Emmon',
+			IsFemale:false,
+			Culture:"",
+			titles:["Lord of Sharp Point"],
+		},
+    
 ]
 
 // Displays Cards
