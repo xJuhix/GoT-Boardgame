@@ -75,7 +75,7 @@ var playerCards = [
 
 		{
 			Id:332,
-			Name: "Duram Bar Emmon",
+			name: "Duram Bar Emmon",
 			src: 'images/baremmon.png',
 			alt:'',
 			house: 'Bar Emmon',
@@ -110,7 +110,7 @@ for (const i of container) {
 }
 
 function cardClicked() {
-    const colors = ["#70A6CE", "#FF8428"];
+    const colors = ["#70A6CE", "#ab2112"];
 
     let box = document.getElementById('check-' + this.id);
     box.checked = !box.checked;
@@ -124,10 +124,9 @@ function cardClicked() {
     }
     if (checked <= 2) {
         if (box.checked) {
-
         } else {
-            this.style.outline = "";
-            this.style.border = "4px solid white";
+					this.style.outline = "";
+					this.style.border = "4px solid white";
         }
     } else {
         box.checked = !box.checked;
@@ -142,35 +141,35 @@ document.getElementById('startbtn').addEventListener('click', () => {
     let checked = 0;
     for (const i of boxes) {
         if (i.checked) {
-            checked++;
-            PLAYER.push({ Id: i.id.replace("check-", "") });
+					checked++;
+					PLAYER.push({ Id: i.id.replace("check-", "") });
         }
     }
     if (checked == 2) {
         document.getElementById('cardselection').remove();
         startGame();
     } else {
-        alert('Please select 2 Characters to start the battle!')
+      	alert('Please select 2 Characters to start the battle!')
     }
 })
 
 
 function startGame() {
     playerCards.forEach((val) => {
-        for (let i = 0; i < 2; i++) {
-            if (val.Id == PLAYER[i].Id) {
-                PLAYER[i].name = val.name;
-                PLAYER[i].src = val.src;
-                var play = PLAYER[i].name;
-            }
-        }
+			for (let i = 0; i < 2; i++) {
+				if (val.Id == PLAYER[i].Id) {
+					PLAYER[i].name = val.name;
+					PLAYER[i].src = val.src;
+					var play = PLAYER[i].name;
+				}
+			}
     })
 
-    PLAYER[0].position = 0;
-    PLAYER[1].position = 0;
-    
-    window.localStorage.setItem('player', JSON.stringify(PLAYER));
-    window.location.href = "game.html"
+	PLAYER[0].position = 0;
+	PLAYER[1].position = 0;
+	
+	window.localStorage.setItem('player', JSON.stringify(PLAYER));
+	window.location.href = "game.html"
 }
 
 

@@ -124,7 +124,7 @@ function rollDice() {
 	}
 	else {
 		document.getElementById("one").style.outline = "none";
-		document.getElementById("two").style.outline = " 6px solid #FF8428";
+		document.getElementById("two").style.outline = " 6px solid #ab2112";
 	}
 
 	console.log(Pos);
