@@ -2,42 +2,42 @@ traps = [
 	{
 		trap: 4,
 		numPushBack: 1,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>You stumbled over a stone.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 7,
 		numPushBack: 3,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3You were hit by an arrow.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 10,
-		numPushBack: 5,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		numPushBack: 6,
+		message: '<h3>A wolf got hold of you.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 14,
 		numPushBack: 9,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>You fell in a hole.</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 18,
 		numPushBack: 4,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>A stone hit you on the head</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 21,
 		numPushBack: 15,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>You lost a swordfight with the Night King</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 27,
 		numPushBack: 8,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>You got stabbed</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 	{
 		trap: 29,
 		numPushBack: 2,
-		message: '<h3>You were hit by an enemy.</h3><h3>You are moved back {{num}} tiles!</h3>',
+		message: '<h3>You just go kicked by a horse</h3><h3>You are moved back {{num}} tiles!</h3>',
 	},
 ];
 
@@ -54,7 +54,6 @@ document.getElementById('name-player2').innerHTML = PLAYER[1].name
 document.getElementById('P-0').src = PLAYER[0].src
 document.getElementById('P-1').src = PLAYER[1].src
 
-// move tokens across the board
 function getOffset(el) {
     var _x = 0;
     var _y = 0;
@@ -67,7 +66,6 @@ function getOffset(el) {
 }
 function movePlayer(Pos, d1, x) {
 
-    //if tile is greater than 30 STOP
     if (Pos > 30) {
         var winnerList = window.localStorage.getItem('winner_list')
         if (winnerList) {
@@ -136,7 +134,7 @@ function rollDice() {
 	let trapObj = traps.find(obj => obj.trap == Pos);
 		console.log("trap " + Pos);
 		document.getElementById("tile_" + Pos).style.backgroundColor = "#8A0000";
-	document.getElementById("infoMessage").innerHTML = trapObj.message.replace("{{num}}", trapObj.numPushBack);
+		document.getElementById("infoMessage").innerHTML = trapObj.message.replace("{{num}}", trapObj.numPushBack);
 			document.getElementById("infoMessage").style.display = "block";
 			setTimeout(function (val) {
 				document.getElementById("tile_" + val).style.backgroundColor = "white";
