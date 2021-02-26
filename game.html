@@ -1,101 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Battle of Winterfell Game. A battle between two houses for the rule of Winterfell">
-    <meta name="keywords" content="Game of Ghrones, Boardgame, houses, Battle, Winterfell ">
-    <meta name="author" content="Juhi Saigal">
-    <title>Battle of Winterfell | Game </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" media="screen and (max-width: 1920px)" href="styles/style.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta
+		name="description"
+		content="Battle of Winterfell Game. A battle between two houses for the rule of Winterfell"
+	/>
+	<meta
+		name="keywords"
+		content="Game of Ghrones, Boardgame, houses, Battle, Winterfell "
+	/>
+	<meta name="author" content="Juhi Saigal" />
+	<title>Battle of Winterfell | Game</title>
+	<link
+		rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	/>
+	<link
+		rel="stylesheet"
+		media="screen and (max-width: 1920px)"
+		href="styles/style.css"
+	/>
 </head>
 
 <body class="gameImg backgroundImg">
+	<header>
+		<nav>
+			<span id="logo">
+				<a href="index.html"
+					><img src="images/BoW-Logo.jpg" alt="Logo for Battle of Winterfell"
+				/></a>
+			</span>
+		</nav>
+	</header>
 
-    <header>
-        <nav>
-            <span id="logo">
-                <a href="index.html"><img src="images/BoW-Logo.jpg" alt="Logo for Battle of Winterfell"></a>
-            </span>
-        </nav>
-    </header>
+	<main>
+		<div id="gamePage">
+			<div class="container-fluid">
+				<div class="row">
+					<h2 id="status"></h2>
+					<div id="infoMessage"></div>
+					<img id="P-0" src="#" alt="" />
+					<img id="P-1" src="#" height="50px" alt="" />
+					<div id="die" class="dice">0</div>
+					<button id="dice" class="btn border" onclick="rollDice()">
+						Roll Dice
+					</button>
 
-<main>
-    <div id="gamePage">
-        <div class="container-fluid">
-            <div class="row">
-                <h2 id="status"></h2>
-                <div id="infoMessage"></div>
-                <img id="P-0" src="#" alt="">
-                <img id="P-1" src="#"
-                    height="50px" alt="">
-                <div id="die" class="dice">0</div>
-                <button id="dice" class="btn border" onclick="rollDice()">Roll Dice</button>
-                
-                <div class="container-fluid">
-                    <div class="boardcon">
-                        <div class="players">
-                            <h3 class="pr-5 mr-5 playername" id="name-player1">Name Player1</h3>
-                            <img class="getElementById" id='one' src="" alt="selected player img">
-                        </div>
-                        <div class="players">
-                            <h3 class="pr-5 mr-5 playername" id="name-player2">Name Player2</h3>
-                            <img class="image-player2" id='two' src="" alt="selected player img">
-                        </div>
+					<div class="container-fluid">
+						<div class="boardcon">
+							<div class="players">
+								<h3 class="pr-5 mr-5 playername" id="name-player1">
+									Name Player1
+								</h3>
+								<img
+									class="getElementById"
+									id="one"
+									src=""
+									alt="selected player img"
+								/>
+							</div>
+							<div class="players">
+								<h3 class="pr-5 mr-5 playername" id="name-player2">
+									Name Player2
+								</h3>
+								<img
+									class="image-player2"
+									id="two"
+									src=""
+									alt="selected player img"
+								/>
+							</div>
 
-                        <div class="container-fluid game-board-area">
-                            <div class="brow-container">
-                                <div class="brow1">
-                                    <div id="tile_1">1</div>
-                                    <div id="tile_2">2</div>
-                                    <div id="tile_3">3</div>
-                                    <div id="tile_4">4</div>
-                                    <div id="tile_5">5</div>
-                                    <div id="tile_6">6</div>
-                                    <div id="tile_7">7</div>
-                                    <div id="tile_8">8</div>
-                                    <div id="tile_9">9</div>
-                                    <div id="tile_10">10</div>
-                                </div>
-                                <div class="brow2">
-                                    <div id="tile_11">11</div>
-                                    <div id="tile_12">12</div>
-                                    <div id="tile_13">13</div>
-                                    <div id="tile_14">14</div>
-                                    <div id="tile_15">15</div>
-                                </div>
-                                <div class="brow3">
-                                    <div id="tile_25">25</div>
-                                    <div id="tile_24">24</div>
-                                    <div id="tile_23">23</div>
-                                    <div id="tile_22">22</div>
-                                    <div id="tile_21">21</div>
-                                    <div id="tile_20">20</div>
-                                    <div id="tile_19">19</div>
-                                    <div id="tile_18">18</div>
-                                    <div id="tile_17">17</div>
-                                    <div id="tile_16">16</div>
-                                </div>
-                                <div class="brow4">
-                                    <div id="tile_30">30</div>
-                                    <div id="tile_29">29</div>
-                                    <div id="tile_28">28</div>
-                                    <div id="tile_27">27</div>
-                                    <div id="tile_26">26</div>
-                                </div>
-                            </div>
-                            <button id="rules" onclick="gameRules()">How To Play</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
+							<div class="container-fluid game-board-area">
+								<div class="brow-container">
+									<div class="brow1">
+										<div id="tile_1">1</div>
+										<div id="tile_2">2</div>
+										<div id="tile_3">3</div>
+										<div id="tile_4">4</div>
+										<div id="tile_5">5</div>
+										<div id="tile_6">6</div>
+										<div id="tile_7">7</div>
+										<div id="tile_8">8</div>
+										<div id="tile_9">9</div>
+										<div id="tile_10">10</div>
+									</div>
+									<div class="brow2">
+										<div id="tile_11">11</div>
+										<div id="tile_12">12</div>
+										<div id="tile_13">13</div>
+										<div id="tile_14">14</div>
+										<div id="tile_15">15</div>
+									</div>
+									<div class="brow3">
+										<div id="tile_25">25</div>
+										<div id="tile_24">24</div>
+										<div id="tile_23">23</div>
+										<div id="tile_22">22</div>
+										<div id="tile_21">21</div>
+										<div id="tile_20">20</div>
+										<div id="tile_19">19</div>
+										<div id="tile_18">18</div>
+										<div id="tile_17">17</div>
+										<div id="tile_16">16</div>
+									</div>
+									<div class="brow4">
+										<div id="tile_30">30</div>
+										<div id="tile_29">29</div>
+										<div id="tile_28">28</div>
+										<div id="tile_27">27</div>
+										<div id="tile_26">26</div>
+									</div>
+								</div>
+								<button id="rules" onclick="gameRules()">How To Play</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
-<script src="scripts/game.js"></script>
-</body>
+    <script src="scripts/game.js"></script>
+  </body>
 </html>

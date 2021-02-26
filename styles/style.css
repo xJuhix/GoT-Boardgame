@@ -99,7 +99,6 @@ nav{
 	height: 270px;
 	width: 100%;
 	margin-bottom: 25px;
-
 }
 
 #logo img {
@@ -144,6 +143,7 @@ nav{
 	text-align: center;
 }
 
+
 .card-image {
 	object-fit: contain;
 	width: 100%;
@@ -180,7 +180,7 @@ nav{
 .playButton:hover, #rules:hover, .modal-newGame:hover, #dice:hover {
 	cursor: pointer;
 	color: white;
-	background-color: #FF8428;
+	background-color: #ab2112;
 	box-shadow: 0 16px 16px 0 rgba(255, 255, 255, 0.322), 0 15px 30px 0 rgba(255, 255, 255, 0.329);
 }
 
@@ -459,7 +459,7 @@ div.dice {
 #restartGame:hover {
 	cursor: pointer;
 	color: white;
-	background-color: #FF8428;
+	background-color: #ab2112;
 	box-shadow: 0 16px 16px 0 rgb(255 255 255 / 32%), 0 15px 30px 0 rgb(255 255 255 / 33%);
 }
 
