@@ -117,7 +117,7 @@ function cardClicked() {
     let checked = 0;
     for (const i of boxes) {
         if (i.checked) {
-            this.style.outline = "8px solid  " + colors[checked];
+            this.style.outline = "8px solid" + colors[checked];
             checked++
         }
     }
