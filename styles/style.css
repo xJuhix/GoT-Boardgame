@@ -101,6 +101,17 @@ nav{
 	margin-bottom: 25px;
 }
 
+footer{
+	position: absolute;
+	width: 100%;
+	margin-bottom: 0;
+	background-color: #141F26;
+}
+
+footer p{
+	margin-left: 3rem;
+}
+
 #logo img {
   height: 250px;
 }
